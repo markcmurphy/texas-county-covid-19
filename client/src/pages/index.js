@@ -7,6 +7,8 @@ import AboutSection from '../components/aboutSection'
 import Card from '../components/card'
 import { MDBRow } from 'mdbreact'
 
+import MapChart from '../components/MapChart'
+
 class App extends Component {
   constructor(props) {
     super(props)
@@ -36,21 +38,22 @@ class App extends Component {
               `Material Design For Bootstrap`,
             ]}
           />
-          <Carousel />
-          <Intro />
+          {/* <Carousel /> */}
+          {/* <Intro /> */}
           <main>
-            <AboutSection />
-            <section id="cardSection">
+            <MapChart />
+            {/* <AboutSection /> */}
+            {/* <section id="cardSection">
               <h2 className="h1-responsive text-center font-weight-bold mb-5">
                 Our bestsellers
                 <p className="App-intro">{this.state.apiResponse}</p>
-              </h2>
-              <MDBRow className="m-0" center>
+              </h2> */}
+            {/* <MDBRow className="m-0" center>
                 <Card />
                 <Card />
                 <Card />
-              </MDBRow>
-            </section>
+              </MDBRow> */}
+            {/* </section> */}
           </main>
         </Layout>
       </>
