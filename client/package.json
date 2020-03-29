@@ -7,6 +7,8 @@
   "dependencies": {
     "@svgr/webpack": "^4.1.0",
     "cheerio": "^1.0.0-rc.3",
+    "convert-array-to-csv": "^1.0.10",
+    "d3-dsv": "^1.2.0",
     "d3-fetch": "^1.1.2",
     "d3-scale": "^3.2.1",
     "datamaps": "^0.5.9",

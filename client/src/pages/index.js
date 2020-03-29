@@ -6,24 +6,23 @@ import Carousel from '../components/carousel'
 import AboutSection from '../components/aboutSection'
 import Card from '../components/card'
 import { MDBRow } from 'mdbreact'
-
 import MapChart from '../components/MapChart'
 
 class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = { apiResponse: '' }
-  }
+  // constructor(props) {
+  //   super(props)
+  //   this.state = { apiResponse: '' }
+  // }
 
-  callAPI() {
-    fetch('http://localhost:3000/testAPI')
-      .then(res => res.text())
-      .then(res => this.setState({ apiResponse: res }))
-  }
+  // callAPI() {
+  //   fetch('http://localhost:3000/casesbycounty')
+  //     .then(res => res.text())
+  //     .then(res => this.setState({ apiResponse: res }))
+  // }
 
-  componentWillMount() {
-    this.callAPI()
-  }
+  // componentWillMount() {
+  //   this.callAPI()
+  // }
 
   render() {
     return (
@@ -41,19 +40,19 @@ class App extends Component {
           {/* <Carousel /> */}
           {/* <Intro /> */}
           <main>
-            <MapChart />
             {/* <AboutSection /> */}
-            {/* <section id="cardSection">
-              <h2 className="h1-responsive text-center font-weight-bold mb-5">
+            <section id="cardSection">
+              <MapChart />
+              {/* <h2 className="h1-responsive text-center font-weight-bold mb-5">
                 Our bestsellers
-                <p className="App-intro">{this.state.apiResponse}</p>
               </h2> */}
-            {/* <MDBRow className="m-0" center>
-                <Card />
-                <Card />
-                <Card />
-              </MDBRow> */}
-            {/* </section> */}
+              {/* <p className="App-intro">{this.state.apiResponse}</p> */}
+              {/* <MDBRow className="m-0" center> */}
+              {/* <Card /> */}
+              {/* <Card /> */}
+              {/* <Card /> */}
+              {/* </MDBRow> */}
+            </section>
           </main>
         </Layout>
       </>
