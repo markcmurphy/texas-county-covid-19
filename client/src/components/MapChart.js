@@ -18,9 +18,11 @@ const MapChart = () => {
   const [zoom, setZoom] = useState(2.5)
   console.log(zoom)
   useEffect(() => {
-    csv('http://localhost:3000/casesbycounty').then(counties => {
-      setData(counties)
-    })
+    csv('https://texas-county-covid-19.herokuapp.com/casesbycounty').then(
+      counties => {
+        setData(counties)
+      }
+    )
     console.log(data)
   }, [])
 
