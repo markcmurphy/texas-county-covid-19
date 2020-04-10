@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: '/reponame',
+  pathPrefix: '/texas-county-covid-19',
   siteMetadata: {
     title: 'Texas COVID19',
     description: 'Texas Covid19 Choropleth by County',

@@ -16,14 +16,12 @@ const geoUrl = 'https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json'
 const MapChart = () => {
   const [data, setData] = useState([])
   const [zoom, setZoom] = useState(2.5)
-  console.log(zoom)
   useEffect(() => {
     csv('https://texas-county-covid-19.herokuapp.com/casesbycounty').then(
       counties => {
         setData(counties)
       }
     )
-    console.log(data)
   }, [])
 
   const colorScale = scaleQuantile()
