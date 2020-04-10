@@ -1,8 +1,9 @@
 module.exports = {
+  pathPrefix: '/reponame',
   siteMetadata: {
     title: 'Texas COVID19',
     description: 'Texas Covid19 Choropleth by County',
-    siteUrl: 'localhost',
+    homepage: 'https://markcmurphy.github.io/texas-county-covid-19',
     author: 'Mark Murphy',
   },
   plugins: [
@@ -29,14 +30,5 @@ module.exports = {
         // icon: `${__dirname}/src/images/mdb-react-small.png`, // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: 'gatsby-plugin-express',
-      options: {
-        output: 'config/gatsby-express.json',
-      },
-    },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.app/offline
-    // 'gatsby-plugin-offline',
   ],
 }
