@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: 'MDB React Starter',
-    description: 'MDB React starter for material design landing page',
-    siteUrl: 'https://gatsby-starter.mdbootstrap.com',
-    author: 'anna-morawska',
+    title: 'Texas COVID19',
+    description: 'Texas Covid19 Choropleth by County',
+    siteUrl: 'localhost',
+    author: 'Mark Murphy',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -26,7 +26,7 @@ module.exports = {
         background_color: `#4B5EB8`,
         theme_color: `#68008C`,
         display: `standalone`,
-        icon: `${__dirname}/src/images/mdb-react-small.png`, // This path is relative to the root of the site.
+        // icon: `${__dirname}/src/images/mdb-react-small.png`, // This path is relative to the root of the site.
       },
     },
     {

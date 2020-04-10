@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-material-design-for-bootstrap",
+  "name": "texas-county-covid-19",
   "private": true,
-  "description": "A simple starter which lets you quickly start developing with Gastby and Material Design For Bootstrap",
+  "description": "Texas Covid19 Choropleth by County",
   "version": "0.1.0",
-  "author": "Anna Morawska <a.morawska@mdbootstrap.com>",
+  "author": "Mark Murphy",
   "dependencies": {
     "@svgr/webpack": "^4.1.0",
     "cheerio": "^1.0.0-rc.3",
@@ -50,9 +50,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/anna-morawska/gatsby-material-design-for-bootstrap"
-  },
-  "bugs": {
-    "url": "https://github.com/anna-morawska/gatsby-material-design-for-bootstrap/issues"
+    "url": "https://github.com/markcmurphy/texas-county-covid-19"
   }
 }
