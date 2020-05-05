@@ -1,21 +1,18 @@
-import React, { useState, useEffect, Component } from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   ComposableMap,
   ZoomableGroup,
-  ZoomableGroupProps,
   Geographies,
   Geography,
 } from 'react-simple-maps'
 import { scaleQuantile } from 'd3-scale'
 import { csv } from 'd3-fetch'
-import { csvFormatRows } from 'd3-dsv'
-import axios from 'axios'
 
 const geoUrl = 'https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json'
 
 const MapChart = () => {
   const [data, setData] = useState([])
-  const [zoom, setZoom] = useState(2.5)
+  const [zoom] = useState(2.5)
   useEffect(() => {
     csv('https://texas-county-covid-19.herokuapp.com/casesbycounty').then(
       counties => {
@@ -38,35 +35,48 @@ const MapChart = () => {
       '#782618',
     ])
 
-  return (
-    <div>
-      <ComposableMap
-        projection="geoAlbersUsa"
-        style={{
-          top: '0',
-          height: '90vh',
-          minWidth: '100%',
-        }}
-      >
-        <ZoomableGroup zoom={zoom} center={[-99.9, 31.96]}>
-          <Geographies geography={geoUrl}>
-            {({ geographies }) =>
-              geographies.map(geo => {
-                const cur = data.find(s => s.id === geo.id)
-                return (
-                  <Geography
-                    key={geo.rsmKey}
-                    geography={geo}
-                    fill={colorScale(cur ? cur.cases : '#FFFFF')}
-                  />
-                )
-              })
-            }
-          </Geographies>
-        </ZoomableGroup>
-      </ComposableMap>
-    </div>
-  )
+  if (data) {
+    return (
+      <div>
+        <ComposableMap
+          projection="geoAlbersUsa"
+          style={{
+            top: '0',
+            height: '90vh',
+            minWidth: '100%',
+          }}
+          fill={'lightgrey'}
+        >
+          <ZoomableGroup zoom={zoom} center={[-99.9, 31.96]}>
+            <Geographies geography={geoUrl}>
+              {({ geographies }) =>
+                geographies.map(geo => {
+                  const cur = data.find(s => s.id === geo.id)
+
+                  return (
+                    <Geography
+                      key={geo.rsmKey}
+                      geography={geo}
+                      stroke={'darkgrey'}
+                      strokeWidth={0.5}
+                      style={{
+                        default: { outline: 'none' },
+                        hover: { outline: 'none' },
+                        pressed: { outline: 'none' },
+                      }}
+                      fill={colorScale(cur ? cur.cases : '#FFFFF')}
+                    />
+                  )
+                })
+              }
+            </Geographies>
+          </ZoomableGroup>
+        </ComposableMap>
+      </div>
+    )
+  } else {
+    return <h1>Loading</h1>
+  }
 }
 
 export default MapChart

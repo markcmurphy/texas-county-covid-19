@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { MDBRow } from 'mdbreact'
 import MapChart from '../components/mapchart'
 
 class App extends Component {
